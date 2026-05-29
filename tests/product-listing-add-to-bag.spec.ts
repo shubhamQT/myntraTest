@@ -2,7 +2,7 @@ import { test, expect } from '../support/fixtures';
 
 test('User can browse Men’s T-Shirts listing and see product info', { tag: ["@e2e","@regression","@P0","@browse-mens-tshirts-listing"] }, async ({ page, homePage, menTshirtsPage }) => {
   await test.step('Open — Open Myntra homepage', async () => {
-    await page.goto('/');
+    await page.goto('https://www.myntra.com/');
     await expect(page).not.toHaveTitle(/404|Error|Not Found/i);
   });
   await test.step('Hover — Hover over \'Men\' in main navigation', async () => {
@@ -21,7 +21,7 @@ test('User can browse Men’s T-Shirts listing and see product info', { tag: ["@
 
 test('User can open first product detail page from listing', { tag: ["@e2e","@regression","@P0","@open-product-detail-page"] }, async ({ page, homePage, menTshirtsPage, productdetailPage }) => {
   await test.step('Open — Open Myntra homepage', async () => {
-    await page.goto('/');
+    await page.goto('https://www.myntra.com/');
     await expect(page).not.toHaveTitle(/404|Error|Not Found/i);
   });
   await test.step('Hover — Hover over \'Men\' in main navigation', async () => {
@@ -40,7 +40,7 @@ test('User can open first product detail page from listing', { tag: ["@e2e","@re
 
 test('User can select size and add product to bag', { tag: ["@e2e","@regression","@P0","@select-size-and-add-to-bag"] }, async ({ page, homePage, menTshirtsPage, productdetailPage, buyPage }) => {
   await test.step('Open — Open Myntra homepage', async () => {
-    await page.goto('/');
+    await page.goto('https://www.myntra.com/');
     await expect(page).not.toHaveTitle(/404|Error|Not Found/i);
   });
   await test.step('Hover — Hover over \'Men\' in main navigation', async () => {
@@ -65,7 +65,7 @@ test('User can select size and add product to bag', { tag: ["@e2e","@regression"
 
 test('User sees bag icon updated after adding product', { tag: ["@e2e","@regression","@P1","@verify-bag-icon-updated"] }, async ({ page, homePage, menTshirtsPage, productdetailPage, buyPage, cartPage }) => {
   await test.step('Open — Open Myntra homepage', async () => {
-    await page.goto('/');
+    await page.goto('https://www.myntra.com/');
     await expect(page).not.toHaveTitle(/404|Error|Not Found/i);
   });
   await test.step('Hover — Hover over \'Men\' in main navigation', async () => {
@@ -90,7 +90,7 @@ test('User sees bag icon updated after adding product', { tag: ["@e2e","@regress
 
 test('User can open bag and verify added product is present', { tag: ["@e2e","@regression","@P0","@verify-product-in-bag"] }, async ({ page, homePage, menTshirtsPage, productdetailPage, buyPage, cartPage }) => {
   await test.step('Open — Open Myntra homepage', async () => {
-    await page.goto('/');
+    await page.goto('https://www.myntra.com/');
     await expect(page).not.toHaveTitle(/404|Error|Not Found/i);
   });
   await test.step('Hover — Hover over \'Men\' in main navigation', async () => {
