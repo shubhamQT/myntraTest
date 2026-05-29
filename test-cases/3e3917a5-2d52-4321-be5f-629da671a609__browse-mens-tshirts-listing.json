@@ -1,0 +1,54 @@
+{
+  "id": "browse-mens-tshirts-listing",
+  "testPlanId": "3e3917a5-2d52-4321-be5f-629da671a609",
+  "requirementId": "61b902a5-ec5c-48ef-aa70-1c2d2c9e05e1",
+  "suiteName": "Product Listing & Add to Bag - Myntra Men’s T-Shirts",
+  "case": {
+    "id": "browse-mens-tshirts-listing",
+    "title": "User can browse Men’s T-Shirts listing and see product info",
+    "priority": "P0",
+    "platforms": [
+      "chrome",
+      "firefox",
+      "safari",
+      "edge"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "open-myntra-home",
+        "action": "openUrl",
+        "targetDescription": "Open Myntra homepage",
+        "value": "https://www.myntra.com/"
+      },
+      {
+        "id": "navigate-mens-category",
+        "action": "hover",
+        "targetDescription": "Hover over 'Men' in main navigation",
+        "locatorHint": "nav[role='navigation'] a[title='Men']"
+      },
+      {
+        "id": "select-tshirts-category",
+        "action": "tap",
+        "targetDescription": "Click on 'T-Shirts' under Men’s category",
+        "locatorHint": "a[href*='/men-tshirts']"
+      },
+      {
+        "id": "assert-listing-visible",
+        "action": "assertVisible",
+        "targetDescription": "Assert product listing grid is visible",
+        "locatorHint": ".results-base"
+      },
+      {
+        "id": "assert-product-info",
+        "action": "assertVisible",
+        "targetDescription": "Assert first product shows name, price, and image",
+        "locatorHint": ".results-base .product-productMetaInfo"
+      }
+    ],
+    "tags": [
+      "@e2e",
+      "@regression"
+    ]
+  }
+}

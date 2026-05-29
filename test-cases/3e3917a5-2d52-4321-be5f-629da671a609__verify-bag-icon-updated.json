@@ -1,0 +1,67 @@
+{
+  "id": "verify-bag-icon-updated",
+  "testPlanId": "3e3917a5-2d52-4321-be5f-629da671a609",
+  "requirementId": "61b902a5-ec5c-48ef-aa70-1c2d2c9e05e1",
+  "suiteName": "Product Listing & Add to Bag - Myntra Men’s T-Shirts",
+  "case": {
+    "id": "verify-bag-icon-updated",
+    "title": "User sees bag icon updated after adding product",
+    "priority": "P1",
+    "platforms": [
+      "chrome",
+      "firefox",
+      "safari",
+      "edge"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "open-myntra-home",
+        "action": "openUrl",
+        "targetDescription": "Open Myntra homepage",
+        "value": "https://www.myntra.com/"
+      },
+      {
+        "id": "navigate-mens-category",
+        "action": "hover",
+        "targetDescription": "Hover over 'Men' in main navigation",
+        "locatorHint": "nav[role='navigation'] a[title='Men']"
+      },
+      {
+        "id": "select-tshirts-category",
+        "action": "tap",
+        "targetDescription": "Click on 'T-Shirts' under Men’s category",
+        "locatorHint": "a[href*='/men-tshirts']"
+      },
+      {
+        "id": "click-first-product",
+        "action": "tap",
+        "targetDescription": "Click on first product in listing",
+        "locatorHint": ".results-base .product-base:nth-child(1)"
+      },
+      {
+        "id": "select-size",
+        "action": "tap",
+        "targetDescription": "Select available size",
+        "locatorHint": ".size-buttons-size-button:not(.disabled):nth-child(1)"
+      },
+      {
+        "id": "add-to-bag",
+        "action": "tap",
+        "targetDescription": "Click 'Add to Bag' button",
+        "locatorHint": ".pdp-add-to-bag"
+      },
+      {
+        "id": "assert-bag-count",
+        "action": "assertContainsText",
+        "targetDescription": "Assert bag icon shows item count",
+        "locatorHint": ".desktop-cart .cartCount",
+        "assertion": "1"
+      }
+    ],
+    "tags": [
+      "@e2e",
+      "@regression"
+    ]
+  }
+}
